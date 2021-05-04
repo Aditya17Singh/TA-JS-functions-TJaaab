@@ -16,8 +16,8 @@ sayHello();
 function fullName (){
   let firstName = prompt("Enter your first name");
   let lastNmae = prompt("Enter your last name");
-  let fullName = (firstName + lastNmae);
-  alert(`${fullName}`);
+  let full = `${firstName} ${lastNmae}`;
+  alert(`${full}`);
 }
 fullName();
 /*
@@ -56,7 +56,7 @@ addTwoNumbers();
 function getTable(){
   let num = +prompt("Enter a number");
   for(i = 1; i <= 10; i++){
-    console.log(`9 * ${i} = ${i * num}`);
+    console.log(`${num} * ${i} = ${i * num}`);
   }
 }
 getTable ();
@@ -67,8 +67,16 @@ getTable ();
   - Alert `[year] is a leap year` otherwise `[year] is not a leap year`
 */
 function isLeapYear(){
-  let year = prompt("Enter a year");
-  for()
+  let year = +prompt("Enter a year");
+  if (year % 400 === 0){
+    alert(`${year} is a leap year`);
+  }else if (year % 100 === 0){
+    alert(`${year} is not a leap year`);
+  }else if (year % 4 === 0){
+    alert(`${year} is a leap year`);
+  }else{
+    alert(`${year} is not a leap year`);
+  }
 }
 isLeapYear();
 /*
@@ -79,5 +87,11 @@ isLeapYear();
 
 */
 function getFactorial (){
-  
+  let num = +prompt("Enter a number");
+  let final = 1;
+  for (let i = num; i>=1; i--){
+    final = final * i;
+  }
+  alert(`The factorial of ${num} is ${final}`);
 }
+getFactorial();
