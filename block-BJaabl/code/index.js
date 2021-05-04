@@ -28,15 +28,13 @@ addTwoNumbers(20, 32); // 32
 addTwoNumbers(10, "100"); // Alert Enter Valid Input
 */
 function addTwoNumbers (firstNum,secondNum){
-  if(addTwoNumbers === Number){
-    return `${firstNum + secondNum}`;
+  if(typeof firstNum !== "number" || typeof secondNum !== "number"){
+    alert("Enter valid input")
   }else{
-    alert("Enter valid input");
+    return firstNum + secondNum;
   }
 }
-addTwoNumbers(10,22);
-addTwoNumbers(20,32);
-addTwoNumbers(10,100);
+
 
 /*
 4. Create a function named `calc` which accepts three parameter `numA`, `numB` and `operation`. Operation
@@ -49,7 +47,24 @@ calc(10, 20, 'add'); // 30
 calc(20, 10, 'sub'); // 10
 calc(20, 10, 'mul'); // 200
 */
-
+function calc (numA,numB,operation){
+  if(typeof numA !== "number" || typeof numB !== "number"){
+    alert("Enter valid input")
+  }else{
+    switch(operation){
+      case "add":
+        return (numA + numB);
+      case "sub":
+        return(numA - numB);
+      case "mul":
+        return(numA * numB);
+      case "div":
+        return(numA / numB);
+      default:
+        alert("Enter valid number")
+    }
+  }
+}
 
 /*
 5. Create a function named `isLeapYear` that accepts a number data type and return `true` or `false` based
