@@ -5,7 +5,9 @@ Write a function named convertToString that accepts a number and converts the nu
 
 Do the following for the given problem:
 */
-
+function convertToString(){
+  
+}
 // - Write a Function Decleration
 function convertToString(n) {
   return String(n);
