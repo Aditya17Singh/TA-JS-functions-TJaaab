@@ -11,9 +11,10 @@ minToSec(2) ➞ 120
 */
 
 // - Write a Function Decleration for above problem
-function minToSec() {
-  // Your code
+function minToSec(minute) {
+  return(minute * 60);
 }
+minToSec();
 // - Execute the function with required parameter
 
 /* 2. 
@@ -26,9 +27,14 @@ isInRange(1, 10, 19); // false
 */
 
 // - Write a Function Decleration for above problem
-function isInRange() {
-  // Your code
+function isInRange(lower,upper,number) {
+  if(lower < number && number < upper ){
+    return true;
+  }else {
+    return false;
+  }
 }
+isInRange(1,20,9);
 // - Execute the function with required parameter
 
 /* 2. calculateBMI
@@ -49,10 +55,20 @@ Obese: BMI is 30 or more
 
 */
 
-function calculateBMI() {
-  // Your code
+function calculateBMI(weight,height) {
+  let bmi = weight / (height * height);
+  switch(true){
+    case bmi < 18.5:
+      return "underweight";
+    case (18.5 < bmi && bmi < 24.9):
+      return "Normal weight";
+    case (25 < bmi && bmi < 29.9):
+      return "Overweight";
+    case bmi > 30:
+      return "Obese";
+  }
 }
-
+calculateBMI();
 /* 3. appropiateDrinks
 
 Create a function that take the age are return the appropiate drink based on these conditions:
@@ -64,10 +80,19 @@ Create a function that take the age are return the appropiate drink based on the
 
 */
 
-function appropiateDrinks() {
-  // Your code
+function appropiateDrinks(age) {
+  switch(true){
+    case age < 14:
+      return "drink fruit juice";
+    case age < 18:
+      return "drink soda";
+    case age < 21:
+      return "drink fruit-flavored beer";
+    case age >= 21:
+      return "drink throat-piercing vodka";
+  }
 }
-
+appropiateDrinks(26);
 /* 4. Add two numers or string
 
 Write a function that accepts two numbers or string and returns the sum of the numbers and concatenation of the strings.
@@ -79,9 +104,16 @@ Twist is when user passes anything other than number, or string value you should
 
 */
 
-function sum() {
-  // Your code
+function sum(a,b) {
+  if(){
+    let add = a + b;
+    return add;
+  }else if(a === String && b === String){
+    let concat = a + b;
+    return concat;
+  }
 }
+sum(2,4);
 
 // Function Test
 sum(2, 4); // 4
