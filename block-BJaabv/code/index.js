@@ -8,8 +8,8 @@
   * [ ] Add an additional argument to the function that takes the conversion rate of human to dog years.
 */
 
-function calculateDogAge(age,) {
-
+function calculateDogAge(age,conversion = 7) {
+  return age * conversion;
 }
 calculateDogAge();
 /*
@@ -19,9 +19,10 @@ calculateDogAge();
   * [ ] Return the total number of movie you will watch.
 */
 
-function calculateMoviesToWatch(age,number) {
-  let constantMaxAge = 80;
-  return (constantMaxAge - age) * (48 * number);
+function calculateMoviesToWatch(age,number){
+  const constant_age = 80;
+  let totalNumberOfMovies=(constant_age - age) * (48 * number);
+  return totalNumberOfMovies;
 }
 calculateMoviesToWatch();
 /*
@@ -99,7 +100,7 @@ sumOrProductOfN(4, 'hello'); // alert "Not a valid Input"
 
 function sumOfN(n) {
   let sum = 0;
-  for(i = 0; i <= n; i++){
+  for(let i = 0; i <= n; i++){
     sum = sum + i;
   }return sum;
 }
@@ -109,13 +110,15 @@ sumOfN();
 7. 🎖Modify the previous program such that only multiples of 5 or 7 are considered in the sum, e.g. n = 20 (5,7,10,14,15,20) 71
 */
 function sumOfN(n) {
-  if(n % 5 === 0 && n % 7 === 0){
     let sum = 0;
-  for(i = 0; i <= n; i++){
-    sum = sum + i;
+  for(let i = 0; i <= n; i++){
+    if(i % 5 === 0 || i % 7 === 0){
+      sum = sum + i;
+    }
   }
-  }return sum;
+  return sum;
 }
+
 sumOfN();
 /*
 8. 🎖Write a function `min` that takes two arguments and returns their minimum.
@@ -124,7 +127,7 @@ sumOfN();
 function min(a,b) {
   if(a > b){
     return b;
-  }else{
+  }else if (b > a){
     return a;
   }
 }
@@ -136,9 +139,7 @@ min(0, -10);
 9. 🎖Write a JavaScript function which accepts an argument and returns the type of the value.
 */
 
-function typeCheck(a) {
-  if(a === Number){
-    return Number;
-  }
+function typeCheck(val) {
+  return typeof val;
 }
-typeCheck(2);
+typeCheck(val);
